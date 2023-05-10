@@ -12,6 +12,17 @@ body, html {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif !important;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+p {
+  color: #494949;
+}
 
 .bg-white{
   background-color: #fff;
@@ -49,9 +60,50 @@ body, html {
   padding: 30px;
 }
 
+.m1 {
+  margin: 10px;
+}
+
+.m2 {
+  margin: 20px;
+}
+.m3 {
+  margin: 30px;
+}
+
+.py1{
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.py2{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.py3{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.my1{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  }
+  
+.my2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+.my3{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 input {
   height: 45px !important;
   border: 1px solid #909090;
+  padding-left: 15px;
   width: 100%;
 }
 
@@ -77,4 +129,20 @@ input:focus {
   text-transform: uppercase;
   border: 1px solid black;
   width: 100%;
+}
+
+.text-center {
+  text-align:center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.ant-form-item {
+  margin-bottom: 8px !important;
+}
+
+.underline {
+  text-decoration: underline;
 }
