@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
 import { Button, Form, message } from "antd";
+import {useDispatch} from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginUser } from "../../apicalls/users";
+import { ShowLoader } from "../../redux/loaderSlice";
 
 function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const onFinish = async (values) => {
     try {
+      dispatch(ShowLoader(true))
       const response = await LoginUser(values);
+      dispatch(ShowLoader(false))
       if (response.success) {
         message.success(response.message);
         localStorage.setItem("user", JSON.stringify({
@@ -20,6 +25,7 @@ function Login() {
         throw new Error(response.message);
       }
     } catch (error) {
+      dispatch(ShowLoader(false))
       message.error(error.message);
     }
   };
@@ -44,7 +50,7 @@ function Login() {
           <input type='password' />
         </Form.Item>
 
-        <button className="contained-btn my1" type="submit"> Login </button>
+        <button className="contained-btn my1 w-full" type="submit"> Login </button>
         <Link className="underline" to="/register">
         Don't have an account? <strong> Sign Up</strong>
         </Link>
