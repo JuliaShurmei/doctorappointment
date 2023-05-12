@@ -2,9 +2,8 @@ import { Col, Form, Row, message } from "antd";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ShowLoader } from "../../redux/loaderSlice";
-import { AddDoctor } from "../../doctors";
 import { useNavigate } from "react-router-dom";
-import { CheckIfDoctorAccountIsApplied, GetDoctorById } from "../../apicalls/doctors";
+import { AddDoctor, CheckIfDoctorAccountIsApplied, } from "../../apicalls/doctors";
 
 function DoctorForm() {
   const [days, setDays] = React.useState([]);
@@ -105,20 +104,6 @@ function DoctorForm() {
                   ]}
                 >
                   <input type='email' />
-                </Form.Item>
-              </Col>
-              <Col span={8}>
-                <Form.Item
-                  label='Last name'
-                  name='lastname'
-                  rules={[
-                    {
-                      required: true,
-                      message: "Required",
-                    },
-                  ]}
-                >
-                  <input type='text' />
                 </Form.Item>
               </Col>
               <Col span={8}>

@@ -56,3 +56,21 @@ export const LoginUser = async (payload) => {
         return error;
     }
 }
+
+export const GetAllUsers = async () => {
+    try {
+      const users = await getDocs(collection(firestoreDatabase, "users"));
+      return {
+        success: true,
+        data: users.docs.map((doc) => {
+          return {
+            ...doc.data(),
+            id: doc.id,
+          };
+        }),
+      };
+    } catch (error) {
+      return error;
+    }
+  }
+  
