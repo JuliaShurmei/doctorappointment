@@ -1,11 +1,10 @@
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
 import firestoreDatabase from "../fireBaseConfig";
-
 
 
 export const AddDoctor = async (payload) => {
     try {
-        await addDoc(collection( firestoreDatabase, "doctors"), payload);
+        await setDoc(doc( firestoreDatabase, "doctors", payload.userId), payload);
         return {
             success: true,
             message: "Doctor added successfully, please wait for approval",
