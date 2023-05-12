@@ -3,7 +3,10 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ShowLoader } from "../../redux/loaderSlice";
 import { useNavigate } from "react-router-dom";
-import { AddDoctor, CheckIfDoctorAccountIsApplied, } from "../../apicalls/doctors";
+import {
+  AddDoctor,
+  CheckIfDoctorAccountIsApplied,
+} from "../../apicalls/doctors";
 
 function DoctorForm() {
   const [days, setDays] = React.useState([]);
@@ -18,6 +21,7 @@ function DoctorForm() {
         days,
         userId: JSON.parse(localStorage.getItem("user")).id,
         status: "pending",
+        role: "doctor",
       };
       const response = await AddDoctor(payload);
       if (response.success) {
@@ -304,11 +308,11 @@ function DoctorForm() {
         </>
       )}
       {alreadyApplied && (
-        <div className="flex flex-col items-center gap2">
-            <h3 className="text-secondary">
-                You have already applied for this doctor account, please wait for
-                the admin to approve your request
-            </h3>
+        <div className='flex flex-col items-center gap2'>
+          <h3 className='text-secondary'>
+            You have already applied for this doctor account, please wait for
+            the admin to approve your request
+          </h3>
         </div>
       )}
     </div>
