@@ -80,7 +80,7 @@ function Appointments() {
 
         if (record.status === "pending" && user.role === "doctor") {
           return (
-            <div className="flex gap-1">
+            <div className="flex gap1">
               <span className="underline cursor-pointer"
                 onClick={() => onUpdate(record.id, "cancelled")}
               >Cancel</span>

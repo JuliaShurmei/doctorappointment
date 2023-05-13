@@ -24,10 +24,15 @@ function ProtectedRoute({ children }) {
           <div className='flex gap3 items-center'>
           <div className='flex gap1 items-center'>
             <i className='ri-shield-user-line'></i>
-            <h4 className='uppercase cursor-pointer underline'
-            onClick={() => navigate("/profile")}
-            >
-              {user.name}</h4>
+            <h4
+                className="uppercase cursor-pointer underline"
+                onClick={() => {
+                  if (user.role === "admin") navigate("/admin");
+                  else navigate("/profile");
+                }}
+              >
+                {user.name}
+              </h4>
             </div>
             <i className="ri-logout-box-r-line"
             onClick={() => {

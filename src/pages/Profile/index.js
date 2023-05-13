@@ -16,18 +16,18 @@ function Profile() {
           {user.role === "doctor" && <DoctorForm />}
 
           {user.role !== "doctor" && (
-            <div className="my-1 bg-white p-1 flex flex-col gap-1">
-              <div className="flex gap-2">
+            <div className="my1 bg-white p1 flex flex-col gap1">
+              <div className="flex gap2">
                 <h4>
                   <b>Name : {user.name}</b>
                 </h4>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap2">
                 <h4>
                   <b>Email : {user.email}</b>
                 </h4>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap2">
                 <h4>
                   <b>
                     Created On : {moment(user?.createdAt).format("DD-MM-YYYY hh:mm A")}

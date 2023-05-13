@@ -1,13 +1,11 @@
+import { Col, message, Row } from "antd";
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { GetAllDoctors } from "../../apicalls/doctors";
 import { ShowLoader } from "../../redux/loaderSlice";
-import { Col, Row, message } from "antd";
-
 
 function Home() {
-  const navigate = useNavigate();
   const [doctors = [], setDoctors] = React.useState([]);
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("user"));
@@ -31,31 +29,34 @@ function Home() {
   useEffect(() => {
     getData();
   }, []);
+  const navigate = useNavigate();
   return (
-    <div>
-      <div className='flex justify-between'>
+   user && <div>
+      <div className="flex justify-between">
         <div>
-          <input placeholder='Search doctors' className='w400' />
+          <input placeholder="Search doctors" className="w-400" />
         </div>
-        <button
-          className='outlined-btn my1'
-          onClick={() => navigate("/apply-doctor")}
-        >
-          {" "}
-          Apply doctor{" "}
-        </button>
+        {user?.role !== "doctor" && (
+          <button
+            className="outlined-btn"
+            onClick={() => navigate("/apply-doctor")}
+          >
+            Apply doctor
+          </button>
+        )}
       </div>
+
       <Row gutter={[16, 16]} className="my1">
         {doctors.map((doctor) => {
           return (
             <Col span={8}>
               <div
-                className="bg-white p1 flex flex-col gap1 cursor-pointer"
+                className="bg-white p-1 flex flex-col gap1 cursor-pointer"
                 onClick={() => navigate(`/book-appointment/${doctor.id}`)}
               >
                 <div className="flex justify-between w-full">
                   <h2 className="uppercase">
-                    {doctor.firstname} {doctor.lastname}
+                    {doctor.firstName} {doctor.lastName}
                   </h2>
                 </div>
                 <hr />

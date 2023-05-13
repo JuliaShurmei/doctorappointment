@@ -73,8 +73,8 @@ function BookAppointment() {
           }}
         >
           <span>
-            {moment(slot, "HH:mm").format("hh:mm")} -{" "}
-            {moment(slot, "HH:mm").add(slotDuration, "minutes").format("hh:mm")}
+            {moment(slot, "HH:mm").format("hh:mm A")} -{" "}
+            {moment(slot, "HH:mm").add(slotDuration, "minutes").format("hh:mm A")}
           </span>
         </div>
       );
