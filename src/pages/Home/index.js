@@ -55,7 +55,7 @@ function Home() {
               >
                 <div className="flex justify-between w-full">
                   <h2 className="uppercase">
-                    {doctor.firstName} {doctor.lastName}
+                    {doctor.firstname} {doctor.lastname}
                   </h2>
                 </div>
                 <hr />

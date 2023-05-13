@@ -1,6 +1,7 @@
 import {
   collection,
   doc,
+  getDoc,
   getDocs,
   query,
   setDoc,
@@ -8,6 +9,7 @@ import {
   where,
 } from "firebase/firestore";
 import firestoreDatabase from "../fireBaseConfig";
+
 
 export const AddDoctor = async (payload) => {
   try {
@@ -77,6 +79,21 @@ export const GetAllDoctors = async () => {
       return {
         success: true,
         message: "Doctor updated successfully",
+      };
+    } catch (error) {
+      return {
+        success: false,
+        message: error.message,
+      };
+    }
+  }
+
+  export const GetDoctorById = async (id) => {
+    try {
+      const doctor = await getDoc(doc(firestoreDatabase, "doctors", id));
+      return {
+        success: true,
+        data: doctor.data(),
       };
     } catch (error) {
       return {

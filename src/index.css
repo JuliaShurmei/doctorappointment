@@ -2,10 +2,9 @@
 
 body,
 html {
-  background-color: #e4e4e4;
+  background-color: #f0eeee;
   font-family: "Montserrat", sans-serif !important;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -21,31 +20,33 @@ h6,
 a,
 span,
 p {
-  color: #494949;
+  color: #202020;
+  font-weight: 500;
 }
+
+/* colors and backgrounds */
 
 .bg-white {
   background-color: #fff;
   border-radius: 4px !important;
-  border: 1 px solid #d3d2d2;
-  box-shadow: 0 0 2px #d3d2d2;
+  border: 1px solid #d3d2d2;
+  box-shadow: 0 0 2px 0 #d3d2d2;
 }
 
 .text-primary {
-  color: #205E61;
+  color: #205e61;
 }
 .text-secondary {
-  color: #D61355;
+  color: #d61355;
 }
-
 .bg-primary {
-  color: #205E61;
+  background-color: #205e61;
 }
 .bg-secondary {
-  color: #D61355;
+  background-color: #d61355;
 }
 
-
+/* flex classes */
 .flex {
   display: flex;
 }
@@ -58,73 +59,14 @@ p {
 .justify-between {
   justify-content: space-between;
 }
-.justify-end{
-  justify-content: end;
+.justify-end {
+  justify-content: flex-end;
 }
 .items-center {
   align-items: center;
 }
-
-.h-screen {
-  height: 100vh;
-}
-
-.w-400 {
-  width: 400px;
-}
-.w-full{
-  width: 100%;
-}
-.p1 {
-  padding: 10px;
-}
-
-.p2 {
-  padding: 20px;
-}
-.p3 {
-  padding: 30px;
-}
-
-.m1 {
-  margin: 10px;
-}
-
-.m2 {
-  margin: 20px;
-}
-.m3 {
-  margin: 30px;
-}
-
-.py1 {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.py2 {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.py3 {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.my1 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.my2 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.my3 {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.items-end {
+  align-items: flex-end;
 }
 
 .gap1 {
@@ -136,14 +78,76 @@ p {
 .gap3 {
   gap: 30px;
 }
-input, textarea, select {
+
+/* heights and widths */
+.h-screen {
+  height: 100vh;
+}
+.w400 {
+  width: 400px;
+}
+.w-full {
+  width: 100%;
+}
+.w-half {
+  width: 50%;
+}
+.p1 {
+  padding: 10px;
+}
+.p2 {
+  padding: 20px;
+}
+.p3 {
+  padding: 30px;
+}
+
+.m1 {
+  margin: 10px;
+}
+.m2 {
+  margin: 20px;
+}
+.m3 {
+  margin: 30px;
+}
+
+.py1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.py2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.py3 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.my1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.my2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.my3 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* form-elements */
+input , textarea , select{
   height: 45px !important;
   border: 1px solid #909090;
   padding-left: 15px;
   width: 100%;
+  border-radius: 4px;
 }
 
-input:focus, textarea, select {
+input:focus , textarea , select{
   outline: none;
   border: 1px solid #494949;
 }
@@ -152,50 +156,62 @@ textarea{
   min-height: 100px;
   padding-top: 20px;
 }
+
 .contained-btn {
   height: 45px !important;
-  border-radius: 0 !important;
+
   background-color: black !important;
   color: white !important;
   text-transform: uppercase;
   padding: 0 20px;
+  border-radius: 4px;
 }
 
 .outlined-btn {
   height: 45px !important;
-  border-radius: 0 !important;
+ 
   background-color: white !important;
   color: black !important;
   text-transform: uppercase;
   border: 1px solid black;
   padding: 0 20px;
+  border-radius: 4px;
 }
+
+/* 
+text classes */
 
 .text-center {
   text-align: center;
 }
-
 .uppercase {
   text-transform: uppercase;
 }
-
-.ant-form-item {
-  margin-bottom: 8px !important;
+.underline {
+  text-decoration: underline;
 }
 .cursor-pointer {
   cursor: pointer;
 }
 
-.underline {
-  text-decoration: underline;
+/* antd overriding */
+.ant-form-item {
+  margin-bottom: 8px !important;
 }
+
+/* spinner */
 
 .spinner-parent {
   position: fixed;
-  inset:0;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #000000b5;
   z-index: 999;
+}
+
+
+hr{
+  border: 1px solid #d3d2d2;
 }
