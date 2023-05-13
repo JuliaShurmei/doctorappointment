@@ -51,12 +51,12 @@ function Home() {
           return (
             <Col span={8}>
               <div
-                className="bg-white p-1 flex flex-col gap1 cursor-pointer"
+                className="bg-white p1 flex flex-col gap1 cursor-pointer"
                 onClick={() => navigate(`/book-appointment/${doctor.id}`)}
               >
                 <div className="flex justify-between w-full">
                   <h2 className="uppercase">
-                    {doctor.firstName} {doctor.lastName}
+                    {doctor.firstname} {doctor.lastname}
                   </h2>
                 </div>
                 <hr />
